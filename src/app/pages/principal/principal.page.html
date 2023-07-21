@@ -1,0 +1,147 @@
+<app-menu></app-menu>
+<ion-router-outlet id="principal"></ion-router-outlet>
+
+<ion-header>
+  <ion-toolbar>        
+    <ion-buttons slot="start">
+      <ion-menu-button menu="primerMenu" autoHide="false"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-avatar slot="start" class="avatar">
+      <img src="{{imagen}}" alt="">      
+    </ion-avatar>
+    <ion-title class="names">{{nombre_usr}} {{apellidos}}</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-icon name="log-out" (click)="fun_salir()">Salir</ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="https://rickandmortyapi.com/api/character/avatar/3.jpeg">
+      </ion-avatar>
+      <ion-label>
+        <h3>Dr. Elena</h3>
+        <p>Dec 10, 2022</p>
+      </ion-label>
+    </ion-item>
+    <img src="https://www.atulado.com.ec/content/dam/a-tu-lado/es_EC/images/covid-19/Covid%20Diagramado-19.png" alt="ion">
+    <ion-card-header>
+      <ion-card-title>Sintomas del COVID-19</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus iaculis mollis ligula sed ultrices.
+    </ion-card-content>
+    <ion-footer>
+      <ion-row>
+        <ion-col center text-center>
+          <button>
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div>5 Likes</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button>
+            <ion-icon name="text"></ion-icon>
+            <div>1 Comments</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button>
+            <ion-icon name="time"></ion-icon>
+            <div>Hace 5 horas</div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-footer>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="https://rickandmortyapi.com/api/character/avatar/9.jpeg">
+      </ion-avatar>
+      <ion-label>
+        <h3>Dr. Jacinto</h3>
+        <p>Dec 10, 2022</p>
+      </ion-label>
+    </ion-item>
+    <img src="https://img.freepik.com/vector-gratis/hombre-viruela-simio-sintomas_1308-110470.jpg?w=740&t=st=1661323219~exp=1661323819~hmac=2cbcade3d6d93e10d29b0bb89515843ff98b029256a07a9504a3a140f2b8f97a" alt="ion">
+    <ion-card-header>
+      <ion-card-title>Sintomas de la viruela del mono</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus iaculis mollis ligula sed ultrices.
+    </ion-card-content>
+    <ion-footer>
+      <ion-row>
+        <ion-col center text-center>
+          <button>
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div>10 Likes</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button>
+            <ion-icon name="text"></ion-icon>
+            <div>4 Comments</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button>
+            <ion-icon name="time"></ion-icon>
+            <div>Hace 15 horas</div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-footer>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="https://rickandmortyapi.com/api/character/avatar/11.jpeg">
+      </ion-avatar>
+      <ion-label>
+        <h3>Dr. Maria</h3>
+        <p>Dec 10, 2022</p>
+      </ion-label>
+    </ion-item>
+    <img src="https://img2.rtve.es/im/5503087/?w=900" alt="ion">
+    <ion-card-header>
+      <ion-card-title>Pasos para realizar primeros auxilios</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus iaculis mollis ligula sed ultrices.
+    </ion-card-content>
+    <ion-footer>
+      <ion-row>
+        <ion-col center text-center>
+          <button>
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div>25 Likes</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button>
+            <ion-icon name="text"></ion-icon>
+            <div>10 Comments</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <button>
+            <ion-icon name="time"></ion-icon>
+            <div>Hace 24 horas</div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-footer>
+  </ion-card>
+  
+
+
+</ion-content>

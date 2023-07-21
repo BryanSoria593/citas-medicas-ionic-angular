@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="black">
+    <ion-buttons slot="start">
+      <ion-button (click)="alerta()"> 
+        <ion-icon slot="icon-only" name="help-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="cancel()">
+        <ion-icon name="close-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Editar cita</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <label for="">Seleccione nueva fecha: </label>
+    <ion-input name="fecha" type="date" placeholder="Fecha de nacimiento*" [(ngModel)]="newInfo.fecha" required>
+    </ion-input>
+  </ion-item>
+
+  <ion-grid *ngIf="newInfo.fecha!=''">
+    <ion-row class="filas">
+      <ion-col size="100px" *ngFor="let item of infoTicket">
+        <ion-card class="card" (click)="selectTicket(item.id_turno)">
+          <div class="card__front">
+            <p class="card__name">
+              <span class="span">Turno: </span> {{item.id_disponibilidad}} <br>
+              <span class="span">Inicio:</span> {{item.hora_inicio}} <br>
+              <span class="span">Final: </span> {{item.hora_final}}
+            </p>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  
+
+  <ion-button *ngIf="newInfo.idDisp!=''" color="success" expand="block" (click)="actualizar()">Actualizar cita</ion-button>
+  
+
+
+
+
+
+</ion-content>

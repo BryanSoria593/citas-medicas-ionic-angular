@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agendar medicamento</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/principal"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>    
+    <ion-item *ngFor="let item of cites">
+      <ion-avatar slot="start">
+        <img class="pepe" [src]="item.ImagenUsu" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{item.Area}}</h2>
+        <h3>Dr. {{item.NombreDoc}} {{item.ApellidoDoc}}  |  Paciente: {{item.NombreUsu}} {{item.ApellidoUsu}}</h3>
+        <p>Fecha: {{item.fecha}}</p>
+        <p>Hora: {{item.hora_inicio}} - {{item.hora_final}}</p>        
+        <p         
+        [ngClass]="{'pendiente' : item.estado === 'Pendiente'}"        
+        >Estado: {{item.estado}}</p>
+      </ion-label>
+      <ion-button (click)="modalToHistorial( item.id_cita)">
+        <ion-icon name="bandage-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+    
+  </ion-list>
+  
+</ion-content>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,68 @@
+<app-header titulo="Registrar usuario"></app-header>
+
+
+<ion-content>
+  <div id="register" class="content">
+
+    <ion-row class="header ion-align-items-center information">
+      <ion-col size="10">
+        <img src="../../../assets/images/banner3.png" alt="">
+      </ion-col>
+    </ion-row>
+    <form>
+      <ion-grid>
+        <ion-row color="transparent" justify-content-center>
+          <ion-col align-self-center size-xs="12">
+            <div padding>
+              <ion-item>
+                <ion-input name="nombres" type="text" placeholder="Nombres*" [(ngModel)]="info.nombres" required></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input name="apellidos" type="text" placeholder="Apellidos*" [(ngModel)]="info.apellidos" required>
+                </ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input name="cedula" type="text" placeholder="Cédula*" [(ngModel)]="info.cedula" required></ion-input>
+              </ion-item>
+              <ion-item>
+                <label for="">Fecha de nacimiento: </label>
+                <ion-input name="fecha" type="date"  placeholder="Fecha de nacimiento*" [(ngModel)]="info.fecha" required>
+                </ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input name="ciudad" type="text" placeholder="Lugar: La Libertad, Guayaquil, ..."
+                  [(ngModel)]="info.ciudad" required>
+                </ion-input>
+              </ion-item>   
+              <ion-item>
+                <ion-label>Sexo: </ion-label>
+                <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Select One" [(ngModel)]="info.sexo" [ngModelOptions]="{standalone: true}">
+                  <ion-select-option  value="Masculino">Masculino</ion-select-option>
+                    <ion-select-option  value="Femenino">Femenino</ion-select-option>
+                </ion-select>
+              </ion-item>     
+                                  
+              <ion-item>
+                <ion-input name="email" type="email" placeholder="juan@email.com" [(ngModel)]="info.email" required>
+                </ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input type="password" placeholder="Contraseña" autocomplete="new-password"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input name="confirm" type="password" placeholder="Confirmar contraseña" [(ngModel)]="info.contrasena"
+                  required>
+                </ion-input>
+              </ion-item>
+              <button (click)="registerUser()" type="submit" class="registerbtn">Register</button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+    <div class="pie-form">
+      <a routerLink="/login">¿Ya tienes cuenta? Inicia sesión</a>
+    </div>
+  </div>
+
+</ion-content>

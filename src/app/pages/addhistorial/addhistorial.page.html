@@ -1,0 +1,36 @@
+ <ion-header>
+  <ion-toolbar color="black">    
+    <ion-buttons slot="end">
+      <ion-button (click)="cancel()">
+        <ion-icon name="close-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Asignar medicamento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Indicaciones: </ion-label>
+    <ion-textarea rows="6" cols="20" [(ngModel)]="desripcion" placeholder="Ingrese los medicamentos..."></ion-textarea>
+  </ion-item>  
+  <ion-item>
+    <input type="file" accept="image/*" multiple (change)="onFileInputChange($event)">
+  </ion-item>
+
+  <ion-button color="success" (click)="registerData()">Registrar historial</ion-button>
+
+  <ion-grid>
+    <ion-row >      
+      <ion-col *ngFor="let item of previews">
+        <ion-item class="imagenes" >      
+          <img [src]="item" alt="">
+        </ion-item>      
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <span class="loader"></span>
+</ion-content> 
+
+

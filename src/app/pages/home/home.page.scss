@@ -1,0 +1,64 @@
+.content{
+    // background-image: url(../../../assets/images/welcome.png);
+    height: 100%;
+    width: 100%;
+    background-color: #102030;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    h1{
+        color: red;
+    }
+    p{
+        color: white;
+        margin: 10px;
+    }
+    
+    .information{
+        img{
+            width: 50vh;
+            height: 50vh;
+        }
+    }
+
+    .buttons{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        button{
+            padding: 20px;
+            margin: 10px 0;
+            width: 90%;
+            border-radius: 20px;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            -ms-border-radius: 20px;
+            -o-border-radius: 20px;
+        }
+        .login{
+            
+            background-color: #FFDF6A;
+            font-size: 25px;
+            font-weight:400;
+            color: #102030;
+        }
+        .register{
+            border: 2px solid #FFDF6A;
+            font-size: 25px;
+            font-weight:400;
+            background-color: transparent;
+        }
+    }
+
+}
+footer{
+    background-color: #102030;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #FFDF6A;
+    
+}

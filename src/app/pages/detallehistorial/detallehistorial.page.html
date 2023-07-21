@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="black">
+    <ion-buttons slot="end">
+      <ion-button (click)="cancel()">
+        <ion-icon name="close-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Detalle de la cita</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+  <ion-item *ngFor="let item of medicamentos">
+    {{item.descripcion}}
+  </ion-item>
+
+
+  <div class="foto" *ngFor="let item2 of imagenes[0]">
+    <img [src]="item2.url">
+  </div>
+
+
+  <!-- <ion-card *ngFor="let item2 of imagenes[0]">
+    <ion-item class="imagenes">    
+      <img [src]="item2.url">    
+    </ion-item>
+  </ion-card> -->
+
+  <!-- <ion-grid>
+    <ion-row >      
+      <ion-col *ngFor="let item2 of imagenes[0]">
+        <ion-item class="imagenes">    
+          <img [src]="item2.url">    
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+
+</ion-content>

@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registrar página</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/principal"></ion-back-button>
+     </ion-buttons>
+  </ion-toolbar>
+ </ion-header>
+
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card class="ios hydrated ion-text-center" (click)="especialidad('General')">
+          <img src="/assets/images/MedicinaGeneral.jpg">
+          <ion-card-header class="ion-inherit-color ios hydrated">
+            <ion-card-subtitle class="tamano8">Medicina General</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card class="ios hydrated ion-text-center" (click)="especialidad('Odontólogo')">
+          <img src="/assets/images/Odontologo.jpg">
+          <ion-card-header class="ion-inherit-color ios hydrated">
+            <ion-card-subtitle class="tamano8">Odontología</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card class="ios hydrated ion-text-center" (click)="especialidad('Obstetra')">
+          <img src="/assets/images/Obstetra.jpg">
+          <ion-card-header class="ion-inherit-color ios hydrated">
+            <ion-card-subtitle class="tamano8" value="Obstetra">Obstetría</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card class="ios hydrated ion-text-center" (click)="especialidad('Fisioteraopeuta')">
+          <img src="/assets/images/Fisioterapeuta.jpg">
+          <ion-card-header class="ion-inherit-color ios hydrated">
+            <ion-card-subtitle class="tamano8" value="Fisioteraopeuta">Fisioterapeuta</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-radio-group *ngIf="infoDoctor!=null">
+    <ion-list-header> Seleccione un doctor </ion-list-header>
+    <ion-item *ngFor=" let item of infoDoctor">
+      <ion-avatar slot="start">
+        <img src="{{item.imagen}}" />
+      </ion-avatar>
+      <ion-label>
+        <p class="namesDoctor"> Dr. {{item.nombres}} {{item.apellidos}} </p>
+        <p class="emailDoctor"> {{item.email}} </p>
+      </ion-label>
+      <ion-radio slot="start" value="{{item.id_doctor}}" (click)="selecDoctor(item.id_usuario)"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+
+  <ion-item *ngIf="dataCite.idDoctor!=''">
+    <ion-label>Seleccione una fecha:</ion-label>
+    <ion-input name="fecha" type="date" (ionChange)="getDate($event)" required>
+    </ion-input>
+  </ion-item>
+
+
+  <ion-grid *ngIf="infoTicket!=null">
+    <ion-row class="filas">
+      <ion-col size="100px" *ngFor="let item of infoTicket">
+        <ion-card class="card" (click)="selectTicket(item.id_turno)">
+          <div class="card__front">
+            <p class="card__name">
+              <span class="span">Turno: </span> {{item.id_disponibilidad}} <br>
+              <span class="span">Inicio:</span> {{item.hora_inicio}} <br>
+              <span class="span">Final: </span> {{item.hora_final}}
+            </p>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-button *ngIf="dataCite.ticket!=''" expand="block" (click)="registrar()">Registrar cita</ion-button>
+</ion-content>

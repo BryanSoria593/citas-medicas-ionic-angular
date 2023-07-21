@@ -1,0 +1,41 @@
+.content{
+    // background-image: url(../../../assets/images/welcome.png);
+    height: 100%;
+    width: 100%;
+    background-color: #102030 ;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    p{
+        color: white;
+        margin: 10px;
+    }
+    .information{
+        align-items: center;
+        justify-content: center;
+        img{
+            width: 80%;
+            height: auto;
+        }
+    }
+    .registerbtn {
+        background-color: #04AA6D;
+        color: white;
+        font-size: 20px;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+}
+   a{
+    text-decoration: none;
+   } 
+
+}

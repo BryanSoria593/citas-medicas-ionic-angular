@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Modificar citas</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/principal"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+   <ion-item-sliding *ngFor="let item of cites" #ionItemSliding>
+    <ion-item >
+      <ion-avatar slot="start">
+        <img [src]="item.ImagenDoc" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{item.Area}}</h2>
+        <h3>Dr. {{item.NombreDoc}} {{item.ApellidoDoc}}  |  Paciente: {{item.NombreUsu}} {{item.ApellidoUsu}}</h3>
+        <p>Fecha: {{item.fecha}}</p>
+        <p>Hora: {{item.hora_inicio}} - {{item.hora_final}}</p>        
+        <p         
+        [ngClass]="{'pendiente' : item.estado === 'Pendiente'}"        
+        >Estado: {{item.estado}}</p>
+      </ion-label>
+    </ion-item>
+      <ion-item-options>
+        <ion-item-option  color="Light" (click)="editar(item.id_cita,ionItemSliding)">
+          <ion-icon size="small" color="primary" name="create"></ion-icon>
+        </ion-item-option>
+        <ion-item-option color="Light" (click)="eliminar(item.id_cita,ionItemSliding)">        
+          <ion-icon size="small" color="danger" name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+</ion-content>
